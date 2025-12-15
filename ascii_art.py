@@ -1,12 +1,9 @@
-import time
-from ascii_magic import AsciiArt
+# import time from ascii_magic import AsciiArt
+from src.converter import image_to_ascii
 
-art = AsciiArt.from_image(
-    './image/em.png'
-)
+def main():
+    ascii_text = image_to_ascii("assets/em.png", columns=120)
+    print(ascii_text)
 
-ascii_text = art.to_ascii(columns=120)
-
-for line in art.to_ascii().split('\n'):
-    print(line)
-    time.sleep(0.05)
+if __name__ == "__main__":
+    main()
